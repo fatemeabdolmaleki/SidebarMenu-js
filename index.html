@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(img/Animated\ pixel\ art\ picture\ for\ the\ writer_.gif);
+        }
+
+        nav {
+            width: 300px;
+            height: 100vh;
+            background: rgb(238, 174, 202);
+            background: radial-gradient( rgba(103, 25, 120, 1) 100%,  rgba(148, 187, 233, 1) 40%);
+            transition: 1s;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-color: rgba(103, 25, 120, 0.582) rgba(255, 255, 255, 0.336);
+        }
+
+        nav>div {
+            position: relative;
+            width: 100%;
+            display: flex;
+            cursor: pointer;
+        }
+
+        nav>div>span {
+            position: absolute;
+            display: flex;
+        }
+
+        nav>div>span:first-of-type {
+            color: rgb(238, 174, 202);
+            font-size: 40px;
+            width: 50px;
+            left: 20px;
+            top: 50px;
+        }
+
+        nav>div>span:last-of-type {
+            color: white;
+            background-color: rgb(238, 174, 202);
+            border-radius: 50%;
+            padding: 3px;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            top: 20px;
+            transition: 1s;
+        }
+
+        .general {
+            padding: 150px 20px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 70px;
+        }
+
+        .general * {
+            color: #a3aebc;
+        }
+
+        .general>li {
+            list-style-type: none;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            cursor: pointer;
+            align-items: center;
+            margin-block: 20px;
+            position: relative;
+            transition: 0.3s ease-in-out;
+        }
+
+        .general>li>i {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            transition: .4s;
+
+            &:hover {
+                color: white;
+            }
+
+            &:last-of-type {
+                font-size: 16px;
+            }
+        }
+
+        .general>li>h4 {
+            width: 100px;
+            margin-left: 20px;
+            font-weight: normal;
+            margin-left: 30px;
+        }
+
+        .general>li>ul {
+            width: 100%;
+            background-color: rgb(238, 174, 202);
+            margin-top: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            transition: height 0.5s ease;
+        }
+
+        .general>li>ul>li {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            transition: .4s;
+            color: rgb(101, 94, 94);
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .extra {
+            padding-inline: 20px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .extra * {
+            color: #94a2b6da;
+        }
+
+        .extra>li {
+            list-style-type: none;
+            width: 100%;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            margin-block: 20px;
+        }
+
+        .extra>li>i {
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            font-size: 35px;
+            transition: .4s;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .extra>li>h4 {
+            width: 100px;
+            margin-left: 20px;
+            font-weight: normal;
+            margin-left: 30px;
+        }
+
+        .toggleSpan {
+            transform: rotate(180deg);
+        }
+
+        .navGrow {
+            width: 150px !important;
+        }
+
+        .myop {
+            opacity: 0;
+        }
+
+        .me {
+            width: 150px;
+            height: 150px;
+            position: fixed;
+            bottom: 40px;
+            right: 5px;
+            z-index: 1001;
+            /* border: 1px solid red; */
+
+            >div {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: red;
+
+
+                &:first-of-type {
+                    border-radius: 49% 51% 46% 54% / 74% 77% 23% 26%;
+                    background-color: #424965;
+                    animation: anime2 infinite alternate 2s;
+
+                }
+
+                &:last-of-type {
+                    background-image: url(img/IMG_20240503_145931_527.jpg);
+                    background-size: cover;
+                    border-radius: 49% 51% 46% 54% / 37% 31% 69% 63%;
+                    animation: anime1 infinite alternate 2s;
+
+                }
+            }
+
+            &:hover {
+                >a {
+                    left: -30px;
+                    opacity: 1;
+
+                    &:nth-of-type(2) {
+                        left: -70px;
+                    }
+
+                    &:nth-of-type(3) {
+                        left: -70px;
+                    }
+
+                    &:nth-of-type(4) {
+                        left: -30px;
+                    }
+                }
+            }
+
+            >a {
+                position: absolute;
+                left: 30px;
+                text-decoration: none;
+                font-size: 30px;
+                transition: 1s;
+                color: aliceblue;
+                opacity: 0;
+
+                &:first-of-type {
+                    top: 0;
+
+                }
+
+                &:nth-of-type(2) {
+                    top: 40px;
+                }
+
+                &:nth-of-type(3) {
+                    top: 90px;
+                }
+
+                &:nth-of-type(4) {
+                    top: 140px;
+                }
+
+            }
+
+
+        }
+
+        @keyframes anime1 {
+            to {
+                border-radius: 49% 51% 48% 52% / 46% 46% 54% 54%;
+            }
+        }
+
+        @keyframes anime2 {
+            to {
+                border-radius: 70% 30% 44% 56% / 46% 34% 66% 54%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <span><i class="bi bi-p-square-fill"></i></span>
+            <span id="toggle"><i class="bi bi-chevron-compact-left"></i></span>
+        </div>
+        <ul class="general">
+            <li>
+                <i class="bi bi-gem"></i>
+                <h4>components</h4>
+                <i class="bi bi-chevron-right"></i>
+                <ul>
+                    <li>Grid</li>
+                    <li>Layout</li>
+                    <li>Forms</li>
+                </ul>
+            </li>
+            <li>
+                <i class="bi bi-bar-chart-fill"></i>
+                <h4>charts</h4>
+                <i class="bi bi-chevron-right"></i>
+                <ul>
+                    <li>Pie Chart</li>
+                    <li>Line Chart</li>
+                    <li>Bar Chart</li>
+                </ul>
+            </li>
+            <li>
+                <i class="bi bi-cart-check"></i>
+                <h4>E-Commerce</h4>
+                <i class="bi bi-chevron-right"></i>
+                <ul>
+                    <li>Products</li>
+                    <li>Orders</li>
+                    <li>Credit Card</li>
+                </ul>
+            </li>
+            <li>
+                <i class="bi bi-globe-americas"></i>
+                <h4>Maps</h4>
+                <i class="bi bi-chevron-right"></i>
+                <ul>
+                    <li>Google Map</li>
+                    <li>Open street Map</li>
+                </ul>
+            </li>
+            <li>
+                <i class="bi bi-easel3-fill"></i>
+                <h4>themes</h4>
+                <i class="bi bi-chevron-right"></i>
+                <ul>
+                    <li>Dark</li>
+                    <li>Light</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="extra">
+            <li>
+                <i class="bi bi-file-earmark-minus-fill"></i>
+                <h4>Documentation</h4>
+            </li>
+            <li>
+                <i class="bi bi-calendar"></i>
+                <h4>Calendar</h4>
+            </li>
+            <li>
+                <i class="bi bi-alexa"></i>
+                <h4>Examples</h4>
+            </li>
+        </ul>
+    </nav>
+    <div class="me">
+        <a href="https://www.instagram.com/fatemeabdolmaleki_">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://github.com/fatemeabdolmaleki">
+            <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/fateme-abdolmaleki/">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a href=" fatemeabdolmaleki703@gmail.com">
+            <i class="bi bi-envelope"></i>
+        </a>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+<script>
+    const toggleMenu = document.getElementById('toggle');
+    const nav = document.querySelector('nav');
+    const icons = document.querySelectorAll('.general > li > i:not(:first-of-type)');
+    const headings = document.querySelectorAll('.general > li > h4');
+    const subMenu = document.querySelectorAll('.general > li > ul');
+    const li = document.querySelectorAll('.general > li');
+    const icons2 = document.querySelectorAll('.extra > li > h4')
+
+    toggleMenu.addEventListener('click', (e) => {
+        nav.classList.toggle('navGrow');
+        e.target.classList.toggle('toggleSpan');
+
+        icons.forEach((icon) => {
+            icon.classList.toggle('myop');
+        });
+
+        headings.forEach((heading) => {
+            heading.classList.toggle('myop');
+        });
+        icons2.forEach((m) => {
+            m.classList.toggle('myop');
+        });
+    });
+
+    // calc height submenu 
+    subMenu.forEach((val) => {
+        val.setAttribute('data-h', val.clientHeight);
+        val.style.height = '0';
+    });
+    // calc height submenu 
+
+    // کنترل باز و بسته شدن زیرمنوها
+    li.forEach((val, i) => {
+        val.addEventListener('click', () => {
+            console.log(val.children[3]);
+            if (val.children[3] != undefined) {
+                // reset subMenu//
+                subMenu.forEach((item, index) => {
+                    if (index != i) {
+                        item.style.height = '0'
+                    } else {
+                        let myHeight = val.children[3].clientHeight
+                        console.log(myHeight);
+
+                        if (myHeight == 0) {
+                            val.children[3].style.height = val.children[3].getAttribute('data-h') + 'px'
+                        } else {
+                            val.children[3].style.height = '0px'
+                        }
+                    }
+                })
+                // reset subMenu//
+
+
+                // val.children[2].style.height=val.children[2].getAttribute('data-h')+'px'
+            }
+        })
+    })
+</script>
+
+</html>
